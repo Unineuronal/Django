@@ -2,4 +2,4 @@
 
 Apps instaladas:
     
-    Usuarios: Modelo para modelo de usuario personalizado
+    Usuarios: Modelo para usuario personalizado
