@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'usuarios.apps.UsuariosConfig', #APP USUARIOS
+    'mapa', #APP MAPA
 ]
 
 MIDDLEWARE = [
@@ -110,5 +111,5 @@ STATIC_URL = '/static/'
 
 #APP USUARIOS
 AUTH_USER_MODEL = 'usuarios.CustomUser' #EL MODELO CUSTOM QUEDA COMO AUTH USER
-LOGIN_REDIRECT_URL = '/' #REDIRECCION PARA LOGIN
-LOGOUT_REDIRECT_URL = '/' #REDIRECCION PARA LOGOUT
+LOGIN_REDIRECT_URL = '../' #REDIRECCION PARA LOGIN
+LOGOUT_REDIRECT_URL = '../' #REDIRECCION PARA LOGOUT

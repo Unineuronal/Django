@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mapa</title>
+
+    <!-- JQUERY PARA MANEJAR MAS FACIL TODO -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <!--    
+        SE DEBE CREAR UNA CUENTA Y ADQUIRIR EL TOKEN NUEVO PARA UTILIZAR NUEVO MAPA
+        https://www.mapbox.com/
+    -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />
+
+
+    <!--    
+        ESTILO PARA EL MARCADOR CUSTOM EL QUE SE AGREGA CON EL BOTON
+    -->
+    <style>
+        .marker { 
+            background-image: url('https://cdn.pixabay.com/photo/2012/04/12/20/12/x-30465_960_720.png');
+            background-size: cover;
+            width: 10px;
+            height: 10px;
+            cursor: pointer; 
+        }
+    </style>
+
+</head>
+<body>
+    <div id='map' style='width: 100%; height: 600px;'></div>
+    <table>
+        <th>
+            <td><pre id='coordinates' class='coordinates'></pre></td>
+            <td><button id="btnadd">AGREGAR MARCA</button></td>
+        </th>
+    </table>
+    
+    
+
+
+    <script src="{% static 'js/mapa.js' %}"></script>
+</body>
+</html>
