@@ -27,11 +27,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'usuarios.apps.UsuariosConfig', #APP USUARIOS
     'mapa', #APP MAPA
+    'api', #APP API
+    'rest_framework', #APP REST PARA QUE FUNCIONE LA API
+    'corsheaders', #APP PARA CONTROLAR EL ACCESO A LA INFORMACION DE OTROS DOMINIOS
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -113,3 +117,22 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'usuarios.CustomUser' #EL MODELO CUSTOM QUEDA COMO AUTH USER
 LOGIN_REDIRECT_URL = '../' #REDIRECCION PARA LOGIN
 LOGOUT_REDIRECT_URL = '../' #REDIRECCION PARA LOGOUT
+
+
+REST_FRAMEWORK = { #CONFIGURACION REST FRAMEWORK (API)
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10 #PAGINACION PARA ORNEAR LOS DATOS
+}
+
+CORS_ORIGIN_WHITELIST = [ #EL DOMINIO QUE PERMITAS PARA ACCEDER A LA INFORMACION
+    "http://127.0.0.1:8000",
+]
+
+CORS_ALLOW_METHODS = ( #METODOS QUE PUEDEN SER UTILIZADOS
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
